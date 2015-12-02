@@ -5,13 +5,13 @@ trait List[T]{
   def head : T
   def tail : List[T]
 
-  //def singleton[T] (elem : T) = new Cons[T](elem, new Nil[T])
+  def singleton[T] (elem : T) = new Cons[T](elem, new Nil[T])
 
 }
 
 /** Using val here in class parameters makes the class override the default methods from the trait */
 
-class Cons[T] (val head : List[T],val tail : List[T]) extends List[T]{
+class Cons[T] (val head : T,val tail : List[T]) extends List[T]{
 
   def isEmpty = false
 }
@@ -23,6 +23,7 @@ class Nil[T] extends List[T] {
 
   // Here "Nothing" return type works because it is a sub type of every AnyRef sub class (here List) and as part of Polymorphism it can be passed
   override def head: Nothing = throw new NoSuchElementException("Nil.head")
-
   override def tail: Nothing = throw new NoSuchElementException("Nil.tail")
+
+  override def toString: String = "Nil"
 }

@@ -39,5 +39,3 @@ def sqrtRed(num: Double) = {
   sqrIter(1)
 }
 sqrtRed(9)
-
-

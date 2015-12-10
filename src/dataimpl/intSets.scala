@@ -1,8 +1,5 @@
 package dataimpl
 
-/**
-  * Created by ashish on 03/12/15.
-  */
 object intSets {
 
   def main(args: Array[String]) {
